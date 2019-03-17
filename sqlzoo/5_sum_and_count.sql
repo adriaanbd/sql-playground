@@ -70,8 +70,8 @@ SELECT name, population/area AS density FROM bbc WHERE population = (SELECT MAX(
 -- 8. Pick the result that would be obtained from the following code: 
 /*
 Table-D
-Americas	732240
-Middle East	13403102
-South America	17740392
-South Asia	9437710
+Americas  732240
+Middle East 13403102
+South America 17740392
+South Asia  9437710
 */
