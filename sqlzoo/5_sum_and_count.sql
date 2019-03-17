@@ -1,3 +1,5 @@
+-- Questions found here: https://sqlzoo.net/wiki/SUM_and_COUNT
+
 -- total population of the world
 SELECT SUM(population) AS total_population
 FROM world;

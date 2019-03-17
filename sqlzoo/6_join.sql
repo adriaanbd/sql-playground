@@ -1,3 +1,5 @@
+-- Questions found here: https://sqlzoo.net/wiki/The_JOIN_operation
+
 -- 1. show the matchid and player name for all goals scored by Germany. To identify German players, check for: teamid = 'GER'
 SELECT matchid, player 
 FROM goal 
@@ -36,3 +38,13 @@ WHERE coach = 'Fernando Santos';
 SELECT player FROM goal
 JOIN game ON matchid = id
 WHERE stadium = 'National Stadium, Warsaw';
+
+-- TODO
+-- More difficult questions 
+
+-- 8.
+-- 9.
+-- 10.
+-- 11.
+-- 12.
+-- 13.

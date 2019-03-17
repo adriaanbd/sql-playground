@@ -1,3 +1,5 @@
+-- Questions found here: https://sqlzoo.net/wiki/SELECT_from_Nobel_Tutorial
+
 -- nobel prices for 1950
 SELECT yr, subject, winner
   FROM nobel
