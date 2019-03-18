@@ -1,4 +1,5 @@
 -- Questions found here: https://sqlzoo.net/wiki/More_JOIN_operations
+-- Schema found here: https://sqlzoo.net/wiki/More_details_about_the_database.
 
 -- 1. List the films where the yr is 1962 [Show id, title] 
 SELECT id, title 
@@ -23,3 +24,40 @@ SELECT id FROM movie
 WHERE title = 'Casablanca';
 
 -- 6. Obtain the cast list for 'Casablanca'.
+SELECT name FROM actor
+JOIN casting ON id = actorid
+WHERE movieid = 11768;
+
+-- 7. Obtain the cast list for the film 'Alien' 
+SELECT name FROM actor
+JOIN casting ON id = actorid
+JOIN movie ON movieid = movie.id
+WHERE title = 'Alien';
+
+-- 8. List the films in which 'Harrison Ford' has appeared 
+SELECT title FROM movie
+JOIN casting ON id = movieid
+JOIN actor ON actorid = actor.id
+WHERE name = 'Harrison Ford';
+
+-- 9. List the films where 'Harrison Ford' has appeared as supporting actor
+SELECT title FROM movie
+JOIN casting ON id = movieid
+JOIN actor ON actorid = actor.id
+WHERE name = 'Harrison Ford'
+AND ord != '1';
+
+-- 10. List the films together with the leading star for all 1962 films. 
+SELECT title, name FROM movie
+JOIN casting ON id = movieid
+JOIN actor ON actorid = actor.id
+WHERE yr = '1962'
+AND ord = '1';
+
+-- TODO
+-- Harder Questions
+-- 11. Which were the busiest years for 'John Travolta', show the year and the number of movies he made each year for any year in which he made more than 2 movies. 
+-- 12. List the film title and the leading actor for all of the films 'Julie Andrews' played in. 
+-- 13. Obtain a list, in alphabetical order, of actors who've had at least 30 starring roles. 
+-- 14. List the films released in the year 1978 ordered by the number of actors in the cast, then by title. 
+-- 15. List all the people who have worked with 'Art Garfunkel'. 
